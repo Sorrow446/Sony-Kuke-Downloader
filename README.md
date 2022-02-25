@@ -1,6 +1,5 @@
 # Sony-Kuke-Downloader
-[Sony Kuke](https://dereferer.me/?https://hi-resmusic.sonyselect.kuke.com/) downloader written in Go.
- downloader written in Go.
+[Sony Kuke](https://dereferer.me/?https://hi-resmusic.sonyselect.kuke.com/) downloader written in Go. This one was a pain, enjoy.
 ![](https://i.imgur.com/jF6FXQu.png)
 [Windows, Linux, macOS and Android binaries](https://github.com/Sorrow446/Sony-Kuke-Downloader/releases)
 
