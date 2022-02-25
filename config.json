@@ -1,0 +1,7 @@
+{
+    "sonySelectId": "",
+    "outPath": "Sony Kuke downloads",
+    "trackTemplate": "{{.trackPad}}. {{.title}}",
+    "omitArtists": false,
+    "keepCover": true
+}
