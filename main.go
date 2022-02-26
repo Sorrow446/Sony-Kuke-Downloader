@@ -353,7 +353,7 @@ func sanitize(filename string) string {
 }
 
 func generateUrl(_url string) (string, error) {
-	date := time.Now().Format("2006012154")
+	date := time.Now().Format("20060121504")
 	u, err := url.Parse(_url)
 	if err != nil {
 		return "", err
