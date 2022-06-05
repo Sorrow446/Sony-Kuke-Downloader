@@ -58,13 +58,19 @@ func handleErr(errText string, err error, _panic bool) {
 	fmt.Println(errString)
 }
 
+func wasRunFromSrc() bool {
+	buildPath := filepath.Join(os.TempDir(), "go-build")
+	return strings.HasPrefix(os.Args[0], buildPath)
+}
+
 func getScriptDir() (string, error) {
 	var (
 		ok    bool
 		err   error
 		fname string
 	)
-	if filepath.IsAbs(os.Args[0]) {
+	runFromSrc := wasRunFromSrc()
+	if runFromSrc {
 		_, fname, _, ok = runtime.Caller(0)
 		if !ok {
 			return "", errors.New("Failed to get script filename.")
@@ -75,8 +81,7 @@ func getScriptDir() (string, error) {
 			return "", err
 		}
 	}
-	scriptDir := filepath.Dir(fname)
-	return scriptDir, nil
+	return filepath.Dir(fname), nil
 }
 
 func fileExists(path string) (bool, error) {
@@ -91,14 +96,17 @@ func fileExists(path string) (bool, error) {
 
 func readTxtFile(path string) ([]string, error) {
 	var lines []string
-	f, err := os.Open(path)
+	f, err := os.OpenFile(path, os.O_RDONLY, 0755)
 	if err != nil {
 		return nil, err
 	}
 	defer f.Close()
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		lines = append(lines, strings.TrimSpace(scanner.Text()))
+		line := strings.TrimSpace(scanner.Text())
+		if line != "" {
+			lines = append(lines, line)
+		}
 	}
 	if scanner.Err() != nil {
 		return nil, scanner.Err()
