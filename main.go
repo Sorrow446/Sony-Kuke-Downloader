@@ -11,6 +11,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"html"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -476,7 +477,7 @@ func parseTemplate(templateText string, tags map[string]string) string {
 		templateText = "{{.trackPad}}. {{.title}}"
 		buffer.Reset()
 	}
-	return buffer.String()
+	return html.UnescapeString(buffer.String())
 }
 
 func formatFreq(freq int) string {
