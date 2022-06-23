@@ -13,7 +13,7 @@ Active subscription required. Input Sony Select user ID into config file.
 
 ~~3. Ctrl+f, search for `sonyselectid`.~~
 
-Sniff Windows app, post data of any of the API posts or PM.    
+Sniff Windows app, see post data of any of the API posts or PM.    
 `https://www.reddit.com/user/Sorrow446/`    
 `Sorrow#6826`
 
