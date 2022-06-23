@@ -13,11 +13,9 @@ Active subscription required. Input Sony Select user ID into config file.
 
 ~~3. Ctrl+f, search for `sonyselectid`.~~
 
-It's now stored as a cookie.
-1. Login on browser.
-2. Right click, inspect.
-3. Application -> Cookie, `USEIDENTIFY`.
-![](https://i.imgur.com/TA9AoYK.png)
+Sniff Windows app, post data of any of the API posts or PM.    
+`https://www.reddit.com/user/Sorrow446/`    
+`Sorrow#6826`
 
 Configure any other options if needed.
 |Option|Info|
