@@ -6,9 +6,18 @@
 # Setup
 Active subscription required. Input Sony Select user ID into config file.
 ### Sony Select ID
+
+~~1. Login on browser.~~
+
+~~2. Right click, view page source.~~
+
+~~3. Ctrl+f, search for `sonyselectid`.~~
+
+It's now stored as a cookie.
 1. Login on browser.
-2. Right click, view page source.
-3. Ctrl+f, search for `sonyselectid`.
+2. Right click, inspect.
+3. Application -> Cookie, `USEIDENTIFY`.
+![](https://i.imgur.com/TA9AoYK.png)
 
 Configure any other options if needed.
 |Option|Info|
